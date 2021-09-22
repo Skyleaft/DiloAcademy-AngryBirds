@@ -1,17 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    // Fungsi Singleton
+    private static GameController _instance = null;
+    public static GameController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameController>();
+            }
+            return _instance;
+        }
+    }
+
     public SlingShooter SlingShooter;
     public TrailController TrailController;
     public List<Bird> Birds;
     public List<Enemy> Enemies;
     private Bird _shotBird;
     public BoxCollider2D TapCollider;
+    [Header("UI")]
+    [SerializeField]private GameObject GameOverPanel;
+    [SerializeField] private GameObject GameClearPanel;
 
     private bool _isGameEnded = false;
+
+
+
     void Start()
     {
         for (int i = 0; i < Birds.Count; i++)
@@ -61,6 +82,14 @@ public class GameController : MonoBehaviour
             SlingShooter.InitiateBird(Birds[0]);
             _shotBird = Birds[0];
         }
+        else
+        {
+            if (Enemies.Count > 0)
+            {
+                _isGameEnded = true;
+                GameOverPanel.SetActive(true);
+            }
+        }
     }
 
     public void CheckGameEnd(GameObject destroyedEnemy)
@@ -77,7 +106,9 @@ public class GameController : MonoBehaviour
         if (Enemies.Count == 0)
         {
             _isGameEnded = true;
+            GameClearPanel.SetActive(true);
         }
+
     }
 
 

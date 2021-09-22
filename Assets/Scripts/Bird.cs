@@ -15,6 +15,7 @@ public class Bird : MonoBehaviour
     private BirdState _state;
     private float _minVelocity = 0.05f;
     private bool _flagDestroy = false;
+    public float after=2f;
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class Bird : MonoBehaviour
             _state = BirdState.Thrown;
         }
 
+        onBom();
+
         if ((_state == BirdState.Thrown || _state == BirdState.HitSomething) &&
             RigidBody.velocity.sqrMagnitude < _minVelocity &&
             !_flagDestroy)
@@ -38,7 +41,7 @@ public class Bird : MonoBehaviour
             //Hancurkan gameobject setelah 2 detik
             //jika kecepatannya sudah kurang dari batas minimum
             _flagDestroy = true;
-            StartCoroutine(DestroyAfter(2));
+            StartCoroutine(DestroyAfter(after));
         }
     }
 
@@ -73,6 +76,11 @@ public class Bird : MonoBehaviour
     }
 
     public virtual void OnTap()
+    {
+        //Do nothing
+    }
+
+    public virtual void onBom()
     {
         //Do nothing
     }
