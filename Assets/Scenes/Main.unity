@@ -360,6 +360,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 4431414378756052300, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414378756052300, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4431414380145585830, guid: 3f60551be8ec56543829c00b8301f99b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -426,16 +436,6 @@ PrefabInstance:
       value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4431414378566978385, guid: 3f60551be8ec56543829c00b8301f99b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4431414378756052300, guid: 3f60551be8ec56543829c00b8301f99b,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4431414378756052300, guid: 3f60551be8ec56543829c00b8301f99b,
         type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1180,6 +1180,7 @@ GameObject:
   - component: {fileID: 973088125}
   - component: {fileID: 973088127}
   - component: {fileID: 973088126}
+  - component: {fileID: 973088128}
   m_Layer: 5
   m_Name: Level Clear Panel
   m_TagString: Untagged
@@ -1245,6 +1246,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973088124}
   m_CullTransparentMesh: 0
+--- !u!114 &973088128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973088124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7c6a2f0e64e4245988bc8dab7fbf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986793736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1122719125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1692,7 +1705,7 @@ GameObject:
   - component: {fileID: 1639463687}
   - component: {fileID: 1639463686}
   - component: {fileID: 1639463685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pig (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2083,7 +2096,7 @@ GameObject:
   - component: {fileID: 1966640536}
   - component: {fileID: 1966640537}
   - component: {fileID: 1966640538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pig
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2268,7 +2281,7 @@ GameObject:
   - component: {fileID: 2028543360}
   - component: {fileID: 2028543359}
   - component: {fileID: 2028543358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pig (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
